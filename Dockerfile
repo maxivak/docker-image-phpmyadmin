@@ -1,6 +1,8 @@
 FROM phpmyadmin/phpmyadmin:4.6.2-3
 
-RUN apk update
-RUN apk add bash
+#RUN apk add --no-cache bash
 
 EXPOSE 80
+
+ENTRYPOINT [ "/run.sh" ]
+CMD ["phpmyadmin"]
